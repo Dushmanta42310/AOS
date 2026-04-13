@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AOS Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <div class="main-wrapper">
+      <section class="login-card">
+        <div class="brand-top">
+          <div class="logo-box">✈</div>
+          <div class="brand-text">
+            <h3>AOS</h3>
+            <p>Airline Operation Suite</p>
+          </div>
+        </div>
+
+        <h1 id="panelTitle">Login to AOS Portal</h1>
+
+        <div id="messageBox" class="message hidden"></div>
+
+        <div id="loginView" class="panel-view">
+          <div id="loginTabs" class="tabs">
+            <button id="mobileTab" class="tab active" type="button">Mobile Number & OTP</button>
+            <button id="userTab" class="tab" type="button">Username & Password</button>
+          </div>
+
+          <form id="mobileForm" class="form">
+            <label for="mobileNo">Mobile Number</label>
+            <div class="input-wrap">
+              <span class="icon">📱</span>
+              <input
+                type="text"
+                id="mobileNo"
+                maxlength="10"
+                placeholder="Enter registered mobile number"
+              />
+            </div>
+
+            <label for="otp">OTP</label>
+            <div class="otp-row">
+              <div class="input-wrap">
+                <span class="icon">🔐</span>
+                <input
+                  type="text"
+                  id="otp"
+                  maxlength="6"
+                  placeholder="Enter OTP"
+                />
+              </div>
+              <button id="sendOtpBtn" type="button" class="secondary-btn">Send OTP</button>
+            </div>
+
+            <button type="submit" class="primary-btn">Login</button>
+          </form>
+
+          <form id="userForm" class="form hidden">
+            <label for="username">Username</label>
+            <div class="input-wrap">
+              <span class="icon">👤</span>
+              <input
+                type="text"
+                id="username"
+                placeholder="Enter username"
+              />
+            </div>
+
+            <label for="password">Password</label>
+            <div class="input-wrap">
+              <span class="icon">🔒</span>
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+              />
+            </div>
+
+            <button type="submit" class="primary-btn">Login</button>
+          </form>
+
+          <p class="switch-text">
+            Don’t have an account?
+            <button type="button" id="openRegister" class="text-btn">Registration now</button>
+          </p>
+        </div>
+
+        <div id="registerView" class="panel-view hidden">
+          <div class="register-scroll">
+            <form id="registerForm" class="form">
+              <label for="regUsername">Username</label>
+              <div class="input-wrap">
+                <span class="icon">👤</span>
+                <input
+                  type="text"
+                  id="regUsername"
+                  placeholder="Enter username"
+                />
+              </div>
+
+              <label for="regMobile">Mobile Number</label>
+              <div class="input-wrap">
+                <span class="icon">📱</span>
+                <input
+                  type="text"
+                  id="regMobile"
+                  maxlength="10"
+                  placeholder="Enter 10-digit mobile number"
+                />
+              </div>
+
+              <label for="regPassword">Password</label>
+              <div class="input-wrap">
+                <span class="icon">🔒</span>
+                <input
+                  type="password"
+                  id="regPassword"
+                  placeholder="Enter password"
+                />
+              </div>
+
+              <label for="regConfirmPassword">Confirm Password</label>
+              <div class="input-wrap">
+                <span class="icon">🔐</span>
+                <input
+                  type="password"
+                  id="regConfirmPassword"
+                  placeholder="Confirm password"
+                />
+              </div>
+
+              <label for="regMpin">MPIN</label>
+              <div class="input-wrap">
+                <span class="icon">#️⃣</span>
+                <input
+                  type="password"
+                  id="regMpin"
+                  maxlength="4"
+                  placeholder="Enter 4-digit MPIN"
+                />
+              </div>
+
+              <label for="regConfirmMpin">Confirm MPIN</label>
+              <div class="input-wrap">
+                <span class="icon">✅</span>
+                <input
+                  type="password"
+                  id="regConfirmMpin"
+                  maxlength="4"
+                  placeholder="Confirm 4-digit MPIN"
+                />
+              </div>
+
+              <label for="regRole">Role</label>
+              <div class="input-wrap">
+                <span class="icon">🧩</span>
+                <select id="regRole" class="form-select">
+                  <option value="">Select role</option>
+                  <option value="1">Admin</option>
+                  <option value="2">Operations</option>
+                  <option value="3">Crew</option>
+                </select>
+              </div>
+
+              <button type="submit" class="primary-btn">Register</button>
+            </form>
+          </div>
+
+          <p class="switch-text">
+            Already have an account?
+            <button type="button" id="backToLogin" class="text-btn">Back to login</button>
+          </p>
+        </div>
+      </section>
+
+      <section class="visual-card">
+        <img src="Right_img.jpeg" alt="AOS Airline" class="hero-image" />
+
+        <div class="image-overlay"></div>
+
+        <div class="hero-text">
+          <span class="eyebrow">WELCOME TO AOS</span>
+          <h2>Airline Operation Suite</h2>
+          <p>
+            Secure airline operations login for crew access, flight desk
+            management, and operational control.
+          </p>
+        </div>
+
+        <div class="quote-card">
+          <h3>AOS</h3>
+          <p>Fly smart. Manage operations with speed, clarity, and control.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
